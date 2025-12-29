@@ -22,8 +22,7 @@ class SimpleImageUtils {
             hostname === 'localhost' ||
             hostname === '127.0.0.1' ||
             hostname === '' ||
-            protocol === 'file:' ||
-            hostname.includes('localhost')
+            protocol === 'file:'
         );
         
         return isDevelopment ? './assets/' : window.location.origin + '/assets/';
