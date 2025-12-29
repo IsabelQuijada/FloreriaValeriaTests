@@ -8,9 +8,7 @@ const cumpleanosProducts = cumpleanosImageManager.getAllProducts();
 
 // Mapeo de categorías para mostrar nombres amigables
 const categoryNames = {
-    'arreglos-festivos': 'Arreglos Festivos',
-    'decoraciones-especiales': 'Decoraciones Especiales',
-    'centros-mesa-cumpleanos': 'Centros de Mesa'
+    'arreglos-festivos': 'Arreglos Festivos'
 };
 
 class CumpleanosGallery {
@@ -61,9 +59,7 @@ class CumpleanosGallery {
         if (filterContainer) {
             const filters = [
                 { category: 'all', label: 'Toda la Colección' },
-                { category: 'arreglos-festivos', label: 'Arreglos Festivos' },
-                { category: 'decoraciones-especiales', label: 'Decoraciones Especiales' },
-                { category: 'centros-mesa-cumpleanos', label: 'Centros de Mesa' }
+                { category: 'arreglos-festivos', label: 'Arreglos Festivos' }
             ];
 
             filters.forEach(filter => {

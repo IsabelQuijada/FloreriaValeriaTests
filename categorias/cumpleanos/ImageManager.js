@@ -10,17 +10,13 @@ class CumpleanosImageManager {
                 'cumpleanos3.png',
                 'cumpleanos4.png',
                 'cumpleanos5.png',
-                'cumpleanos6.png'
-            ],
-            'decoraciones-especiales': [
+                'cumpleanos6.png',
                 'cumpleanos7png.png',
                 'cumpleanos8.png',
                 'cumpleanos9.png',
                 'cumpleanos10.png',
                 'cumpleanos11.png',
-                'cumpleanos12.png'
-            ],
-            'centros-mesa-cumpleanos': [
+                'cumpleanos12.png',
                 'cumpleanos13.png',
                 'cumpleanos14.png',
                 'cumpleanos15.png',
@@ -32,9 +28,7 @@ class CumpleanosImageManager {
 
         // Descripciones por categoría
         this.categoryDescriptions = {
-            'arreglos-festivos': 'Arreglos florales festivos y coloridos especialmente diseñados para hacer de tu cumpleaños una celebración única y memorable.',
-            'decoraciones-especiales': 'Decoraciones florales especiales que añaden elegancia y alegría a tus celebraciones de cumpleaños.',
-            'centros-mesa-cumpleanos': 'Centros de mesa diseñados especialmente para cumpleaños que transforman cualquier espacio en una fiesta llena de color y vida.'
+            'arreglos-festivos': 'Arreglos florales festivos y coloridos especialmente diseñados para hacer de tu cumpleaños una celebración única y memorable, incluyendo centros de mesa y decoraciones especiales.'
         };
 
         // Descripciones específicas por imagen
@@ -108,16 +102,7 @@ class CumpleanosImageManager {
         const match = filename.match(/(\d+)/);
         const number = match ? match[1] : '1';
         
-        switch (category) {
-            case 'arreglos-festivos':
-                return `Arreglo Festivo ${number}`;
-            case 'decoraciones-especiales':
-                return `Decoración Especial ${number}`;
-            case 'centros-mesa-cumpleanos':
-                return `Centro de Mesa ${number}`;
-            default:
-                return `Arreglo de Cumpleaños ${number}`;
-        }
+        return `Arreglo Festivo ${number}`;
     }
 
     /**

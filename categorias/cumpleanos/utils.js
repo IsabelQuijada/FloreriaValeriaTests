@@ -78,16 +78,7 @@ class CumpleanosUtils {
         const match = filename.match(/(\d+)/);
         const number = match ? match[1] : '1';
         
-        switch (category) {
-            case 'arreglos-festivos':
-                return `Arreglo Festivo ${number}`;
-            case 'decoraciones-especiales':
-                return `Decoración Especial ${number}`;
-            case 'centros-mesa-cumpleanos':
-                return `Centro de Mesa ${number}`;
-            default:
-                return `Arreglo de Cumpleaños ${number}`;
-        }
+        return `Arreglo Festivo ${number}`;
     }
 }
 
