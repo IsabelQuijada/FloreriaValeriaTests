@@ -38,15 +38,49 @@ class SimpleMobileEnhancer {
      * Configurar feedback táctil básico
      */
     setupTouchFeedback() {
-        // Solo para botones importantes
+        // Solo para botones importantes (elementos existentes)
         document.querySelectorAll('.btn, .contact-btn').forEach(button => {
             this.addBasicTouchFeedback(button);
         });
         
-        // Feedback básico para product cards
+        // Feedback básico para product cards (elementos existentes)
         document.querySelectorAll('.product-card').forEach(card => {
             this.addCardTouchFeedback(card);
         });
+
+        // Observar nuevos elementos añadidos dinámicamente al DOM
+        if (window.MutationObserver) {
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        if (!(node instanceof HTMLElement)) {
+                            return;
+                        }
+
+                        // Botones importantes añadidos dinámicamente
+                        if (node.matches('.btn, .contact-btn')) {
+                            this.addBasicTouchFeedback(node);
+                        }
+                        node.querySelectorAll?.('.btn, .contact-btn').forEach(button => {
+                            this.addBasicTouchFeedback(button);
+                        });
+
+                        // Product cards añadidos dinámicamente
+                        if (node.matches('.product-card')) {
+                            this.addCardTouchFeedback(node);
+                        }
+                        node.querySelectorAll?.('.product-card').forEach(card => {
+                            this.addCardTouchFeedback(card);
+                        });
+                    });
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
     }
     
     /**
