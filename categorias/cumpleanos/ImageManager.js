@@ -34,28 +34,28 @@ class CumpleanosImageManager {
         // Descripciones específicas por imagen
         this.imageDescriptions = {
             // Arreglos festivos
-            'cumpleanos1.png': 'Centro de mesa con girasoles radiantes y rosas en tonos suaves, creando un contraste alegre y elegante ideal para celebraciones llenas de luz y color.',
-            'cumpleanos2.png': 'Arreglo floral exuberante con rosas en tonos blanco, rosa, lila y coral, acompañado de follaje y flores de acento para un centro de mesa elegante y colorido.',
-            'cumpleanos3.png': 'Imponente arreglo de rosas rojas acompañado de follaje verde, ideal para expresar amor y celebrar ocasiones especiales con elegancia.',
-            'cumpleanos4.png': 'Arreglo vistoso con girasoles, rosas rojas, gerberas naranjas, aves del paraíso y lirios, ideal para dar un toque alegre y sofisticado a cualquier celebración.',
-            'cumpleanos5.png': 'Arreglo abundante con lirios, gerberas, rosas y flores variadas en tonos blanco, rosa, naranja y fucsia, ideal para llenar de alegría y color cualquier celebración.',
-            'cumpleanos6.png': 'Centro de mesa con girasol, rosas rosas y flores moradas, acompañado de follaje verde, ideal para dar un toque vibrante y fresco a cualquier celebración.',
+            'cumpleanos1.png': 'Centro de mesa con girasoles y rosas suaves, alegre y elegante.',
+            'cumpleanos2.png': 'Rosas en blanco, rosa y coral con follaje, colorido y fresco.',
+            'cumpleanos3.png': 'Rosas rojas y follaje verde, clásico y lleno de amor.',
+            'cumpleanos4.png': 'Girasoles, rosas y gerberas, un toque alegre y sofisticado.',
+            'cumpleanos5.png': 'Lirios, gerberas y rosas en tonos vivos, pura alegría.',
+            'cumpleanos6.png': 'Girasol, rosas rosas y flores moradas, vibrante y fresco.',
             
             // Decoraciones especiales
-            'cumpleanos7png.png': 'Arreglo delicado con gerberas y rosas en tonos rosa, acompañado de flores lilas y follaje, perfecto para dar un toque romántico y elegante a cualquier evento.',
-            'cumpleanos8.png': 'Arreglo espectacular con lirios, rosas rojas, gerberas y flores en tonos naranja, amarillo y rosa, acompañado de follaje, ideal para celebraciones llenas de color y alegría.',
-            'cumpleanos9.png': 'Arreglo exuberante con girasoles, rosas, lirios, gerberas, aves del paraíso y follaje exótico, ideal para llenar de color y alegría cualquier celebración.',
-            'cumpleanos10.png': 'Arreglo vistoso con girasoles, rosas rojas y rosas, aves del paraíso y lirios, ideal para dar un toque alegre y elegante a cualquier celebración.',
-            'cumpleanos11.png': 'Arreglo elegante con gerberas, claveles, alstroemerias y flores en tonos suaves y lilas, ideal para dar un toque delicado y sofisticado a cualquier ocasión.',
-            'cumpleanos12.png': 'Arreglo elegante de rosas en tonos rosa, acompañado de follaje verde, ideal para expresar cariño y sofisticación en cualquier ocasión especial.',
+            'cumpleanos7png.png': 'Gerberas y rosas rosas con flores lilas, romántico y delicado.',
+            'cumpleanos8.png': 'Lirios, rosas y gerberas en tonos cálidos, lleno de color.',
+            'cumpleanos9.png': 'Girasoles, rosas y lirios con follaje exótico, muy alegre.',
+            'cumpleanos10.png': 'Girasoles y rosas con aves del paraíso, alegre y elegante.',
+            'cumpleanos11.png': 'Gerberas, claveles y alstroemerias en tonos suaves, delicado.',
+            'cumpleanos12.png': 'Rosas rosas y follaje verde, tierno y sofisticado.',
             
             // Centros de mesa para cumpleaños
-            'cumpleanos13.png': 'Arreglo con lirios amarillos, gerberas, girasol y claveles en tonos vivos, ideal para dar alegría y color a cualquier celebración.',
-            'cumpleanos14.png': 'Arreglo de mesa con rosas rojas y follaje verde, ideal para dar un toque elegante y clásico a cualquier celebración.',
-            'cumpleanos15.png': 'Arreglo con rosas blancas y rosas, follaje verde y lazo decorativo, ideal para dar un toque delicado y elegante a cualquier celebración.',
-            'cumpleanos16.png': 'Arreglo de mesa con lirios blancos y rosas, rosas rojas, rosas blancas y rosas rosas, ideal para dar un toque elegante y fresco a cualquier celebración.',
-            'cumpleanos17.png': 'Centro de mesa con gerberas amarillas, rosas lilas y blancas, crisantemos y mariposas decorativas, ideal para dar un toque alegre y original a cualquier celebración.',
-            'cumpleanos18.png': 'Arreglo en forma de abanico con rosas rojas, rosas rosas, girasoles y gerberas amarillas, ideal para impresionar y llenar de color cualquier celebración.'
+            'cumpleanos13.png': 'Lirios amarillos, gerberas y girasol, lleno de vida.',
+            'cumpleanos14.png': 'Rosas rojas y follaje verde, elegante y clásico.',
+            'cumpleanos15.png': 'Rosas blancas y rosas con lazo, delicado y elegante.',
+            'cumpleanos16.png': 'Lirios y rosas en blanco y rosa, fresco y elegante.',
+            'cumpleanos17.png': 'Gerberas amarillas, rosas lilas y mariposas, alegre y original.',
+            'cumpleanos18.png': 'Rosas, girasoles y gerberas en abanico, colorido y vistoso.'
         };
 
         this.config = window.CUMPLEANOS_CONFIG || {
