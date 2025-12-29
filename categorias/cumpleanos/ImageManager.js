@@ -40,28 +40,28 @@ class CumpleanosImageManager {
         // Descripciones específicas por imagen
         this.imageDescriptions = {
             // Arreglos festivos
-            'cumpleanos1.png': 'Arreglo floral festivo con colores vibrantes perfectos para celebraciones de cumpleaños inolvidables.',
-            'cumpleanos2.png': 'Diseño floral alegre con flores frescas que añaden vida y color a tu cumpleaños especial.',
-            'cumpleanos3.png': 'Arreglo único con flores selectas que hacen de cada cumpleaños una celebración memorable.',
-            'cumpleanos4.png': 'Combinación floral elegante con diseño exclusivo para hacer tu cumpleaños extraordinario.',
-            'cumpleanos5.png': 'Arreglo refinado con flores de temporada y técnicas florales avanzadas para cumpleaños especiales.',
-            'cumpleanos6.png': 'Diseño contemporáneo con flores importadas perfectas para celebraciones únicas de cumpleaños.',
+            'cumpleanos1.png': 'Centro de mesa con girasoles radiantes y rosas en tonos suaves, creando un contraste alegre y elegante ideal para celebraciones llenas de luz y color.',
+            'cumpleanos2.png': 'Arreglo floral exuberante con rosas en tonos blanco, rosa, lila y coral, acompañado de follaje y flores de acento para un centro de mesa elegante y colorido.',
+            'cumpleanos3.png': 'Imponente arreglo de rosas rojas acompañado de follaje verde, ideal para expresar amor y celebrar ocasiones especiales con elegancia.',
+            'cumpleanos4.png': 'Arreglo vistoso con girasoles, rosas rojas, gerberas naranjas, aves del paraíso y lirios, ideal para dar un toque alegre y sofisticado a cualquier celebración.',
+            'cumpleanos5.png': 'Arreglo abundante con lirios, gerberas, rosas y flores variadas en tonos blanco, rosa, naranja y fucsia, ideal para llenar de alegría y color cualquier celebración.',
+            'cumpleanos6.png': 'Centro de mesa con girasol, rosas rosas y flores moradas, acompañado de follaje verde, ideal para dar un toque vibrante y fresco a cualquier celebración.',
             
             // Decoraciones especiales
-            'cumpleanos7png.png': 'Decoración floral sofisticada que combina tradición y modernidad para tu celebración.',
-            'cumpleanos8.png': 'Arreglo de lujo con presentación ceremonial ideal para cumpleaños importantes y especiales.',
-            'cumpleanos9.png': 'Decoración exclusiva con flores exóticas que creará una atmosfera mágica en tu cumpleaños.',
-            'cumpleanos10.png': 'Arreglo artesanal equilibrado con flores selectas para celebraciones de cumpleaños especiales.',
-            'cumpleanos11.png': 'Decoración premium con técnicas avanzadas y flores de la más alta calidad.',
-            'cumpleanos12.png': 'Arreglo perfecto que representa la elegancia en su máxima expresión para tu cumpleaños.',
+            'cumpleanos7png.png': 'Arreglo delicado con gerberas y rosas en tonos rosa, acompañado de flores lilas y follaje, perfecto para dar un toque romántico y elegante a cualquier evento.',
+            'cumpleanos8.png': 'Arreglo espectacular con lirios, rosas rojas, gerberas y flores en tonos naranja, amarillo y rosa, acompañado de follaje, ideal para celebraciones llenas de color y alegría.',
+            'cumpleanos9.png': 'Arreglo exuberante con girasoles, rosas, lirios, gerberas, aves del paraíso y follaje exótico, ideal para llenar de color y alegría cualquier celebración.',
+            'cumpleanos10.png': 'Arreglo vistoso con girasoles, rosas rojas y rosas, aves del paraíso y lirios, ideal para dar un toque alegre y elegante a cualquier celebración.',
+            'cumpleanos11.png': 'Arreglo elegante con gerberas, claveles, alstroemerias y flores en tonos suaves y lilas, ideal para dar un toque delicado y sofisticado a cualquier ocasión.',
+            'cumpleanos12.png': 'Arreglo elegante de rosas en tonos rosa, acompañado de follaje verde, ideal para expresar cariño y sofisticación en cualquier ocasión especial.',
             
             // Centros de mesa para cumpleaños
-            'cumpleanos13.png': 'Centro de mesa festivo que crea una atmósfera alegre y colorida para tu cumpleaños.',
-            'cumpleanos14.png': 'Arreglo de mesa elegante con flores vibrantes que añade vida a tu celebración de cumpleaños.',
-            'cumpleanos15.png': 'Centro de mesa único con diseño contemporáneo perfecto para fiestas de cumpleaños.',
-            'cumpleanos16.png': 'Arreglo festivo con flores de temporada que transforma tu mesa en el centro de atención.',
-            'cumpleanos17.png': 'Centro de mesa sofisticado que combina colores y texturas para crear impacto visual.',
-            'cumpleanos18.png': 'Arreglo final que corona la decoración de tu cumpleaños con estilo y elegancia.'
+            'cumpleanos13.png': 'Arreglo con lirios amarillos, gerberas, girasol y claveles en tonos vivos, ideal para dar alegría y color a cualquier celebración.',
+            'cumpleanos14.png': 'Arreglo de mesa con rosas rojas y follaje verde, ideal para dar un toque elegante y clásico a cualquier celebración.',
+            'cumpleanos15.png': 'Arreglo con rosas blancas y rosas, follaje verde y lazo decorativo, ideal para dar un toque delicado y elegante a cualquier celebración.',
+            'cumpleanos16.png': 'Arreglo de mesa con lirios blancos y rosas, rosas rojas, rosas blancas y rosas rosas, ideal para dar un toque elegante y fresco a cualquier celebración.',
+            'cumpleanos17.png': 'Centro de mesa con gerberas amarillas, rosas lilas y blancas, crisantemos y mariposas decorativas, ideal para dar un toque alegre y original a cualquier celebración.',
+            'cumpleanos18.png': 'Arreglo en forma de abanico con rosas rojas, rosas rosas, girasoles y gerberas amarillas, ideal para impresionar y llenar de color cualquier celebración.'
         };
 
         this.config = window.CUMPLEANOS_CONFIG || {

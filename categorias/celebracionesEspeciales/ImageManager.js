@@ -97,7 +97,7 @@ class CelebracionesEspecialesImageManager {
             'detalle-forma-corazon8.png': 'Arreglo en forma de corazón con rosas rojas frescas y follaje de eucalipto, presentado en una base de madera. Un diseño clásico y elegante que transmite amor y admiración.',
             'detalle-forma-corazon9.png': 'Caja en forma de corazón con rosas rojas frescas, chocolates y un perfume de regalo. Un detalle sofisticado que combina flores, dulzura y un toque especial para sorprender.',
             'detalle-forma-corazon10.png': 'Doble corazón floral elaborado con gerberas amarillas y rojas, acentos de margaritas y follaje verde. Un arreglo vistoso y alegre, ideal para celebrar el amor y la unión.',
-            'detalle-forma-corazon11.png': 'Detalle floral final en forma de corazón que representa la perfección del amor.'
+            'detalle-forma-corazon11.png': 'Corazón floral elaborado con margaritas, gerberas y lirios blancos, acompañado de follaje verde. Un diseño elegante y sereno, ideal para transmitir paz, amor y buenos deseos.'
         };
 
         this.config = window.CELEBRACIONES_ESPECIALES_CONFIG || {
