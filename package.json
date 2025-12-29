@@ -4,7 +4,9 @@
   "description": "Sitio web de Florería Valeria - Flores frescas para cada ocasión",
   "main": "index.html",
   "scripts": {
-    "dev": "live-server --port=3000 --open=index.html",
+    "dev": "live-server --port=3000 --open=index.html --no-browser",
+    "dev-with-browser": "live-server --port=3000 --open=index.html",
+    "dev-http": "http-server -p 3001 -c-1 -o --cors",
     "build": "npm run optimize-images && npm run minify-css && npm run minify-js",
     "optimize-images": "node scripts/optimize-images.js",
     "optimize-images-advanced": "node scripts/optimize-images.mjs",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "live-server": "^1.2.2",
+    "http-server": "^14.1.1",
     "sharp": "^0.32.6",
     "glob": "^10.3.10",
     "imagemin": "^8.0.1",
