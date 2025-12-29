@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test - Quinceañera Images</title>
+</head>
+<body>
+    <div id="debug-info"></div>
+    <div id="test-images"></div>
+
+    <script src="./config.js"></script>
+    <script src="./ImageManager.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const debugDiv = document.getElementById('debug-info');
+            const imagesDiv = document.getElementById('test-images');
+            
+            // Test 1: Verificar configuración cargada
+            debugDiv.innerHTML += '<h2>🔍 Debug Information</h2>';
+            debugDiv.innerHTML += '<h3>1. Configuración:</h3>';
+            debugDiv.innerHTML += `<p>QUINCEANERA_CONFIG: ${JSON.stringify(window.QUINCEANERA_CONFIG, null, 2)}</p>`;
+            
+            // Test 2: Crear instancia de ImageManager
+            debugDiv.innerHTML += '<h3>2. ImageManager:</h3>';
+            if (window.QuinceaneraImageManager) {
+                const imageManager = new QuinceaneraImageManager();
+                debugDiv.innerHTML += '<p>✅ QuinceaneraImageManager creado correctamente</p>';
+                
+                // Test 3: Verificar método getCategoryPath
+                debugDiv.innerHTML += '<h3>3. getCategoryPath:</h3>';
+                const basePath = imageManager.getCategoryPath('ramo-estilizado');
+                debugDiv.innerHTML += `<p>Path for ramo-estilizado: <strong>${basePath}</strong></p>`;
+                
+                // Test 4: Generar productos de ejemplo
+                debugDiv.innerHTML += '<h3>4. Productos generados:</h3>';
+                const products = imageManager.generateCategoryProducts('ramo-estilizado');
+                debugDiv.innerHTML += `<p>Productos encontrados: ${products.length}</p>`;
+                
+                if (products.length > 0) {
+                    debugDiv.innerHTML += '<h3>5. Primeros 3 productos:</h3>';
+                    products.slice(0, 3).forEach((product, index) => {
+                        debugDiv.innerHTML += `
+                            <div style="border: 1px solid #ccc; margin: 10px 0; padding: 10px;">
+                                <h4>${product.name}</h4>
+                                <p><strong>Image Path:</strong> ${product.image}</p>
+                                <p><strong>Category:</strong> ${product.category}</p>
+                                <img src="${product.image}" alt="${product.name}" style="max-width: 200px; max-height: 200px;" 
+                                     onerror="this.style.border='2px solid red'; this.alt='❌ Error loading: ' + this.src;">
+                            </div>
+                        `;
+                    });
+                } else {
+                    debugDiv.innerHTML += '<p>❌ No se generaron productos</p>';
+                }
+            } else {
+                debugDiv.innerHTML += '<p>❌ QuinceaneraImageManager no disponible</p>';
+            }
+            
+            // Test 5: Verificar si hay otros ImageManagers cargados
+            debugDiv.innerHTML += '<h3>6. Otros ImageManagers disponibles:</h3>';
+            const managers = [
+                'RamosClasicosImageManager',
+                'RamosElegantesImageManager',
+                'BaseImageManager',
+                'ImagePathResolver'
+            ];
+            
+            managers.forEach(managerName => {
+                if (window[managerName]) {
+                    debugDiv.innerHTML += `<p>✅ ${managerName} está disponible</p>`;
+                } else {
+                    debugDiv.innerHTML += `<p>❌ ${managerName} NO está disponible</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

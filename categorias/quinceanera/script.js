@@ -8,11 +8,9 @@ const quinceaneraProducts = quinceaneraImageManager.getAllProducts();
 
 // Mapeo de categorías para mostrar nombres amigables
 const categoryNames = {
-    'ramo-estilizado': 'Ramos Estilizados',
-    'ramo-girasoles': 'Ramos de Girasoles',
-    'ramo-mix': 'Ramos Mixtos',
-    'ramo-rosas': 'Ramos de Rosas',
-    'ramo-tulipanes': 'Ramos de Tulipanes'
+    'ramos-quinceañera': 'Ramos de Quinceañera',
+    'centros-de-mesa': 'Centros de Mesa',
+    'templo-quinceañera': 'Arreglos de Templo'
 };
 
 class QuinceaneraGallery {
@@ -62,11 +60,9 @@ class QuinceaneraGallery {
         if (filterContainer) {
             const filters = [
                 { category: 'all', label: 'Toda la Colección' },
-                { category: 'ramo-estilizado', label: 'Ramos Estilizados' },
-                { category: 'ramo-girasoles', label: 'Ramos de Girasoles' },
-                { category: 'ramo-mix', label: 'Ramos Mixtos' },
-                { category: 'ramo-rosas', label: 'Ramos de Rosas' },
-                { category: 'ramo-tulipanes', label: 'Ramos de Tulipanes' }
+                { category: 'ramos-quinceañera', label: 'Ramos de Quinceañera' },
+                { category: 'centros-de-mesa', label: 'Centros de Mesa' },
+                { category: 'templo-quinceañera', label: 'Arreglos de Templo' }
             ];
 
             filters.forEach(filter => {

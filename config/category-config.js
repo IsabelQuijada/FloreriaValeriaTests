@@ -43,7 +43,7 @@ window.FLORERIA_GLOBAL_CONFIG = {
             }
         },
         quinceanera: {
-            assetPath: 'quinceanera/',
+            assetPath: 'quinceanera-optimizada/',
             name: 'Quinceañera',
             subcategories: {
                 'ramo-estilizado': 'ramoEstilizado/',

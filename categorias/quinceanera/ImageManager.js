@@ -4,30 +4,22 @@ class QuinceaneraImageManager {
     constructor() {
         // Base de datos de imágenes organizadas por categorías
         this.imageDatabase = {
-            'ramo-estilizado': [
-                'ramo-estilizado1.png','ramo-estilizado2.png','ramo-estilizado3.png','ramo-estilizado4.png','ramo-estilizado5.png','ramo-estilizado6.png','ramo-estilizado7.png','ramo-estilizado8.png','ramo-estilizado9.png','ramo-estilizado10.png','ramo-estilizado11.png','ramo-estilizado12.png','ramo-estilizado13.png'
+            'ramos-quinceañera': [
+                'ramo-quinceanera1.png','ramo-quinceanera2.png','ramo-quincenera4.png','ramo-quincenera5.png','ramo-quincenera6.png','ramo-quincenera7.png','ramo-quincenera8.png','ramo-quincenera9.png','ramo-quincenera10.png','ramo-quincenera11.png'
             ],
-            'ramo-girasoles': [
-                'ramo-girasoles1.png','ramo-girasoles2.png','ramo-girasoles3.png','ramo-girasoles4.png'
+            'centros-de-mesa': [
+                'ArregloFloral1.png','arregloFloral2.png','centroDeMesa1.jpeg','centroDeMesa2.png','centroDeMesa3.png'
             ],
-            'ramo-mix': [
-                'ramo-mix1png.png','ramo-mix2.png','ramo-mix3.png','ramo-mix4.png','ramo-mix5.png','ramo-mix6.png','ramo-mix7.png','ramo-mix8.png','ramo-mix9.png','ramo-mix10.png'
-            ],
-            'ramo-rosas': [
-                'ramo-rosas1.png','ramo-rosas2.png','ramo-rosas3.png','ramo-rosas4.png','ramo-rosas5.png','ramo-rosas6.png','ramo-rosas7.png','ramo-rosas8.png','ramo-rosas9.png','ramo-rosas11.png'
-            ],
-            'ramo-tulipanes': [
-                'ramo-tulipanes1.png','ramo-tulipanes2.png','ramo-tulipanes3.png','ramo-tulipanes4.png','ramo-tulipanes5.png','ramo-tulipanes6.png','ramo-tulipanes7.png','ramo-tulipanes8.png','ramo-tulipanes9.png'
+            'templo-quinceañera': [
+                'templo1.jpeg','templo3.jpeg','templo4.jpeg','templo5.jpeg','templo6.jpeg','templo8.jpeg','templo9.jpeg','templo11.jpeg','templo12.jpeg','templo13.jpeg','templo16.jpeg','templo17.jpeg','templo18.jpeg','templo22.jpeg','templo24.jpeg','templo25.jpeg','templo27.jpeg','templo28.jpeg','templo29.jpeg','templo30.jpeg'
             ]
         };
 
         // Descripciones por categoría
         this.categoryDescriptions = {
-            'ramo-estilizado': 'Ramos estilizados con diseños únicos y elegantes, perfectos para una celebración especial de quinceañera.',
-            'ramo-girasoles': 'Ramos vibrantes con girasoles que aportan alegría y energía a tu día especial.',
-            'ramo-mix': 'Ramos mixtos con combinaciones hermosas de flores variadas para una quinceañera memorable.',
-            'ramo-rosas': 'Ramos clásicos de rosas que simbolizan el amor y la belleza en tu celebración de quince años.',
-            'ramo-tulipanes': 'Ramos delicados de tulipanes que aportan frescura y elegancia a tu quinceañera.'
+            'ramos-quinceañera': 'Ramos espectaculares diseñados especialmente para quinceañeras, con flores frescas y diseños únicos para tu día especial.',
+            'centros-de-mesa': 'Centros de mesa elegantes y sofisticados que harán brillar tu celebración de quinceañera.',
+            'templo-quinceañera': 'Arreglos florales para templo, perfectos para la ceremonia religiosa de tu quinceañera.'
         };
 
         // Descripciones específicas por imagen
@@ -107,11 +99,9 @@ class QuinceaneraImageManager {
         const basePath = this.getCategoryPath(category);
         // Mapear nombres de categoría a nombres de carpeta
         const folderMap = {
-            'ramo-estilizado': 'ramoEstilizado',
-            'ramo-girasoles': 'ramoGirasoles',
-            'ramo-mix': 'ramoMix',
-            'ramo-rosas': 'ramoRosas',
-            'ramo-tulipanes': 'ramoTulipanes'
+            'ramos-quinceañera': 'ramos',
+            'centros-de-mesa': 'centroDeMesa',
+            'templo-quinceañera': 'templo'
         };
         const categoryFolder = folderMap[category] || category;
 
@@ -138,18 +128,19 @@ class QuinceaneraImageManager {
         const match = filename.match(/(\d+)/);
         const number = match ? match[1] : '1';
         switch (category) {
-            case 'ramo-estilizado':
-                return `Ramo Estilizado ${number}`;
-            case 'ramo-girasoles':
-                return `Ramo de Girasoles ${number}`;
-            case 'ramo-mix':
-                return `Ramo Mixto ${number}`;
-            case 'ramo-rosas':
-                return `Ramo de Rosas ${number}`;
-            case 'ramo-tulipanes':
-                return `Ramo de Tulipanes ${number}`;
+            case 'ramos-quinceañera':
+                return `Ramo de Quinceañera ${number}`;
+            case 'centros-de-mesa':
+                return `Centro de Mesa ${number}`;
+            case 'templo-quinceañera': {
+                // Usar el nombre real del archivo, sin extensión, capitalizado y con espacios
+                let base = filename.replace(/\.[^/.]+$/, '');
+                base = base.replace(/[-_]/g, ' ');
+                base = base.replace(/\b\w/g, c => c.toUpperCase());
+                return base;
+            }
             default:
-                return `Ramo para Quinceañera ${number}`;
+                return `Arreglo para Quinceañera ${number}`;
         }
     }
 
@@ -187,4 +178,4 @@ class QuinceaneraImageManager {
 }
 
 // Hacer disponible globalmente
-window.GaleriaFunerariaImageManager = GaleriaFunerariaImageManager;
+window.QuinceaneraImageManager = QuinceaneraImageManager;
