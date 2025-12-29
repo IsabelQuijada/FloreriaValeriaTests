@@ -128,8 +128,8 @@ window.addEventListener('resize', () => {
     if (favoriteProducts.length !== newCount) {
         favoriteProducts = generateRandomMixedProducts(newCount);
         // Volver a renderizar productos
-        if (typeof ProductManager !== 'undefined') {
-            new ProductManager({
+        if (typeof OptimizedProductManager !== 'undefined') {
+            new OptimizedProductManager({
                 containerId: 'products-grid',
                 products: favoriteProducts,
                 globalActions: {
@@ -169,9 +169,9 @@ function initializeProducts() {
         return;
     }
 
-    // Crear ProductManager si está disponible
-    if (typeof ProductManager !== 'undefined') {
-        const productManager = new ProductManager({
+    // Crear ProductManager optimizado si está disponible
+    if (typeof OptimizedProductManager !== 'undefined') {
+        const productManager = new OptimizedProductManager({
             containerId: 'products-grid',
             products: favoriteProducts,
             globalActions: {
@@ -203,11 +203,15 @@ function renderProductsManual(products) {
         card.setAttribute('data-product-id', product.id);
         card.style.animationDelay = `${index * 50}ms`;
         
-        // Placeholder image optimizado
-        const placeholderColor = '#f0f0f0';
-        const placeholderSVG = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='${placeholderColor}'/%3E%3C/svg%3E`;
-        
-        card.innerHTML = `
+        // Generar nueva ruta con parámetros de optimización usando ImageUtils
+        const optimizedPath = window.ImageUtils ? 
+            window.ImageUtils.resolveImagePath(product.category, fileName) : 
+            product.image;
+                // Placeholder optimizado usando ImageUtils
+        const placeholderSVG = window.ImageUtils ? 
+            window.ImageUtils.generatePlaceholder() :
+            `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f0f0f0'/%3E%3C/svg%3E`;
+                card.innerHTML = `
             <div class="product-image-wrapper">
                 <div class="product-category-tag">${product.category.toUpperCase()}</div>
                 <img src="${placeholderSVG}" 
@@ -602,12 +606,8 @@ function initializeEventListeners() {
 }
 
 // ============================================
-// LAZY LOADING DE IMÁGENES
+// LAZY LOADING DE IMÁGENES OPTIMIZADO
 // ============================================
 
-// Inicializar lazy loading si está disponible
-if (typeof LazyLoader !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-        LazyLoader.init();
-    });
-}
+// El lazy loading ahora se maneja automáticamente por OptimizedImageLoader
+// que se inicializa automáticamente cuando el DOM está listo

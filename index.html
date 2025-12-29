@@ -364,7 +364,7 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts optimizados -->
     <!-- Cargar configuración global primero -->
     <script src="./config/global-config.js"></script>
     
@@ -377,17 +377,33 @@
     <!-- Sistema de analytics -->
     <script src="./utils/analytics.js"></script>
     
-    <!-- Nuevo sistema de carga optimizada de imágenes -->
-    <script src="./components/ResponsiveImageLoader.js"></script>
+    <!-- Utilidades de imagen optimizadas -->
+    <script src="./utils/SimpleImageUtils.js"></script>
     
-    <!-- Componentes principales -->
+    <!-- Sistema de carga optimizada de imágenes -->
+    <script src="./components/OptimizedImageLoader.js"></script>
+    
+    <!-- Mejoras móviles simplificadas -->
+    <script src="./components/SimpleMobileEnhancer.js"></script>
+    
+    <!-- Componentes principales optimizados -->
     <script src="./components/ProductCard/ProductCard.js"></script>
-    <script src="./components/ProductManager.js"></script>
+    <script src="./components/OptimizedProductManager.js"></script>
     
     <!-- Script principal -->
     <script src="./script.js"></script>
     
-    <!-- Sistema de testing (solo en desarrollo) -->
-    <script src="./utils/test-suite.js"></script>
+    <!-- Utilidades de desarrollo (solo en desarrollo) -->
+    <script>
+        // Solo cargar utilidades de desarrollo en entorno de desarrollo
+        if (window.location.hostname === 'localhost' || 
+            window.location.hostname === '127.0.0.1' || 
+            window.location.protocol === 'file:' ||
+            window.location.search.includes('debug=true')) {
+            const script = document.createElement('script');
+            script.src = './utils/DevelopmentUtils.js';
+            document.head.appendChild(script);
+        }
+    </script>
 </body>
 </html>

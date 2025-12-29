@@ -47,43 +47,17 @@ window.FLORERIA_CONFIG = {
         }
     },
 
-    // Configuración de imágenes y optimización
+    // Configuración optimizada de imágenes
     IMAGES: {
-        // Configuración de lazy loading
         LAZY_LOADING: {
             enabled: true,
             rootMargin: '50px',
             threshold: 0.1
         },
-        
-        // Configuración de formatos
-        FORMATS: {
-            webp: true,
-            jpg: true,
-            fallback: 'jpg'
-        },
-        
-        // Configuración de calidades por breakpoint
-        QUALITY: {
-            mobile: 70,
-            tablet: 75,
-            desktop: 85
-        },
-        
-        // Tamaños por breakpoint
-        SIZES: {
-            small: { width: 400, height: 400 },
-            medium: { width: 600, height: 600 },
-            large: { width: 800, height: 800 },
-            xlarge: { width: 1200, height: 1200 }
-        },
-        
-        // Configuración de CDN (opcional)
-        CDN: {
-            enabled: false,
-            provider: null, // 'cloudinary', 'imagekit', etc.
-            baseUrl: ''
-        }
+        QUALITY: 85,
+        PLACEHOLDER_COLOR: '#f0f0f0',
+        PRELOAD_CRITICAL: true,
+        CRITICAL_IMAGES: 3
     },
 
     // URLs de páginas
@@ -131,51 +105,10 @@ window.FLORERIA_CONFIG = {
         TABLET: 768,
         DESKTOP: 1024,
         LARGE_DESKTOP: 1440
-    },
-
-    // Configuración de imágenes (básica)
-    IMAGES: {
-        QUALITY: 85,
-        PLACEHOLDER_COLOR: '#f0f0f0'
     }
 };
 
-// Backwards compatibility - mantener configuraciones existentes
-window.BODAS_DE_ENSUENO_CONFIG = {
-    ROUTES: { bodasDeEnsueno: window.FLORERIA_CONFIG.ASSETS.BODAS_DE_ENSUENO }
-};
-
-window.RAMOS_ELEGANTES_CONFIG = {
-    ROUTES: { ramosElegantes: window.FLORERIA_CONFIG.ASSETS.RAMOS_ELEGANTES }
-};
-
-window.RAMOS_CLASICOS_CONFIG = {
-    ROUTES: {
-        ramoEstilizado: window.FLORERIA_CONFIG.ASSETS.RAMOS_CLASICOS + 'ramoEstilizado/',
-        ramoGirasoles: window.FLORERIA_CONFIG.ASSETS.RAMOS_CLASICOS + 'ramoGirasoles/',
-        ramoMix: window.FLORERIA_CONFIG.ASSETS.RAMOS_CLASICOS + 'ramoMix/',
-        ramoRosas: window.FLORERIA_CONFIG.ASSETS.RAMOS_CLASICOS + 'ramoRosas/',
-        ramoTulipanes: window.FLORERIA_CONFIG.ASSETS.RAMOS_CLASICOS + 'ramoTulipanes/'
-    }
-};
-
-window.CELEBRACIONES_ESPECIALES_CONFIG = {
-    ROUTES: { celebracionesEspeciales: window.FLORERIA_CONFIG.ASSETS.CELEBRACIONES_ESPECIALES }
-};
-
-window.CUMPLEANOS_CONFIG = {
-    ROUTES: { cumpleanos: window.FLORERIA_CONFIG.ASSETS.CUMPLEANOS }
-};
-
-window.EVENTOS_RELIGIOSOS_CONFIG = {
-    ROUTES: { eventosReligiosos: window.FLORERIA_CONFIG.ASSETS.EVENTOS_RELIGIOSOS }
-};
-
-window.GALERIA_FUNERARIA_CONFIG = {
-    ROUTES: { galeriaFuneraria: window.FLORERIA_CONFIG.ASSETS.GALERIA_FUNERARIA }
-};
-
-// Utilidad para generar mensajes de WhatsApp
+// Utilidad simplificada para generar mensajes de WhatsApp
 window.FLORERIA_UTILS = {
     generateWhatsAppURL: (message, phone = window.FLORERIA_CONFIG.CONTACT.WHATSAPP) => {
         const encodedMessage = encodeURIComponent(message);
@@ -184,11 +117,6 @@ window.FLORERIA_UTILS = {
 
     generateProductWhatsAppMessage: (productName, category) => {
         return `Hola, me interesa el ${productName} de la categoría ${category}. ¿Podrían darme más información sobre disponibilidad y precio?`;
-    },
-
-    getResponsiveImageURL: (basePath, filename, size = 'medium') => {
-        // Función básica para compatibilidad (actualmente no usa sizes)
-        return `${basePath}${filename}`;
     },
 
     isMobile: () => window.innerWidth <= window.FLORERIA_CONFIG.BREAKPOINTS.MOBILE,
