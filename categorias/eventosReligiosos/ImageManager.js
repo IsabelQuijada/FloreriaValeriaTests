@@ -97,7 +97,7 @@ class EventosReligiososImageManager {
             'hermita6.png': 'Arreglos de crisantemos amarillos, flores naranjas y follaje, ideales para altares y procesiones, evocando tradición y alegría.',
             'hermita7.png': 'Arreglos de crisantemos amarillos y follaje, enmarcando imágenes religiosas y alfombras florales, ideales para celebraciones tradicionales llenas de color y devoción.',
             'hermita8.png': 'Arreglos de flores amarillas, rojas y blancas con follaje, ideales para altares y procesiones, transmitiendo alegría, tradición y devoción.',
-            'hermita9.png': 'Simplicidad y belleza en la fe.'
+            'hermita9.png': 'Arreglos de cempasúchil, flores rojas y follaje, ideales para altares y festividades religiosas, llenando el espacio de color, tradición y alegría.'
         };
 
         this.config = window.EVENTOS_RELIGIOSOS_CONFIG || {
