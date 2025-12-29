@@ -15,27 +15,21 @@
     --mobile-shadow-active: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* =========================== */
-/* Touch-Friendly Button Sizes */
-/* =========================== */
+/* Touch-Friendly Button Sizes - Optimizado */
 
 @media (max-width: 768px) {
-    /* Asegurar targets táctiles mínimos */
-    .filter-btn,
-    .contact-btn,
-    .add-to-cart-btn,
-    .modal-close,
-    .quick-view-btn {
+    /* Asegurar targets táctiles mínimos con selector más eficiente */
+    .filter-btn, .contact-btn, .add-to-cart-btn, .modal-close, .quick-view-btn {
         min-height: var(--touch-target-min);
         min-width: var(--touch-target-min);
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
-    /* Eliminar highlight de selección en elementos clickeables */
-    .product-card,
-    .filter-btn,
-    .contact-btn,
-    .add-to-cart-btn,
-    .modal-close {
+    /* Aplicar propiedades táctiles a elementos interactivos */
+    .product-card {
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;

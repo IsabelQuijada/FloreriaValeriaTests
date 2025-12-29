@@ -1,0 +1,119 @@
+/**
+ * Integration CSS - Conecta el design system con estilos existentes
+ * Migración gradual sin breaking changes
+ */
+
+/* Import design system */
+@import url('./design-system.css');
+
+/* Mapeo de clases existentes a nuevo design system usando CSS custom properties */
+.product-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-fast);
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.btn, 
+.contact-btn,
+.quick-view-btn,
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-base);
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-height: var(--touch-target);
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn:hover,
+.contact-btn:hover,
+.quick-view-btn:hover,
+.filter-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn:focus,
+.contact-btn:focus,
+.quick-view-btn:focus,
+.filter-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Compatibilidad con clases existentes */
+.container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.section-title {
+    font-size: var(--font-3xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--space-6);
+    font-family: var(--font-heading);
+}
+
+.section-subtitle {
+    font-size: var(--font-lg);
+    color: var(--gray-600);
+    margin-bottom: var(--space-8);
+}
+
+/* Enhanced animations */
+.animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    .section-title {
+        font-size: var(--font-2xl);
+        text-align: center;
+    }
+    
+    .section-subtitle {
+        font-size: var(--font-base);
+        text-align: center;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-4);
+    }
+}

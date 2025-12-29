@@ -146,5 +146,8 @@ window.resolveOptimizedImagePath = (category, filename) => {
     return window.ImagePathResolver.resolveOptimizedImagePath(category, filename);
 };
 
-console.log(`🖼️ ImagePathResolver initialized - Environment: ${window.ImagePathResolver.isProduction ? 'Production' : 'Development'}`);
-console.log(`📁 Base URL: ${window.ImagePathResolver.baseUrl}`);
+// Logging removed for production
+if (window.FLORERIA_CONFIG?.DEBUG) {
+    console.log(`🖼️ ImagePathResolver initialized - Environment: ${window.ImagePathResolver.isProduction ? 'Production' : 'Development'}`);
+    console.log(`📁 Base URL: ${window.ImagePathResolver.baseUrl}`);
+}

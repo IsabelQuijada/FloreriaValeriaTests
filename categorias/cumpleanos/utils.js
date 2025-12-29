@@ -63,22 +63,11 @@ class CumpleanosUtils {
      * Genera mensaje de WhatsApp contextual
      */
     static generateWhatsAppMessage(productName, category) {
-        let categoryText;
-        switch (category) {
-            case 'arreglos-festivos':
-                categoryText = 'un arreglo festivo';
-                break;
-            case 'decoraciones-especiales':
-                categoryText = 'una decoración especial';
-                break;
-            case 'centros-mesa-cumpleanos':
-                categoryText = 'un centro de mesa';
-                break;
-            default:
-                categoryText = 'un arreglo para cumpleaños';
-        }
-        
-        return `Hola, me interesa ${categoryText}: "${productName}" para mi celebración de cumpleaños. ¿Podrían darme más información sobre disponibilidad y precio?`;
+        // Usar utilidad global con contexto específico
+        return window.FLORERIA_UTILS.generateProductWhatsAppMessage(
+            `${productName} para cumpleaños`, 
+            category || 'cumpleaños'
+        );
     }
 
     /**

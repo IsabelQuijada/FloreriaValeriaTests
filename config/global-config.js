@@ -198,5 +198,7 @@ window.FLORERIA_UTILS = {
 
 // Inicialización de utilidades globales
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Florería Valeria - Configuración cargada:', window.FLORERIA_CONFIG);
+    if (window.FLORERIA_CONFIG.DEBUG) {
+        console.log('Florería Valeria - Configuración cargada:', window.FLORERIA_CONFIG);
+    }
 });

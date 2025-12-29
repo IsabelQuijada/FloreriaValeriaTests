@@ -60,10 +60,7 @@ class ResponsiveImageLoader {
             this.preloadCriticalImages();
         }
         
-        console.log('🚀 ResponsiveImageLoader inicializado', {
-            breakpoint: this.currentBreakpoint,
-            webpSupport: this.supportsWebP
-        });
+        // ResponsiveImageLoader inicializado
     }
     
     /**
@@ -328,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Observar imágenes existentes
     const imageCount = window.responsiveImageLoader.observeImages();
-    console.log(`🖼️ Observando ${imageCount} imágenes para lazy loading`);
+    // Observando imágenes para lazy loading
 });
 
 // Exportar para uso en módulos

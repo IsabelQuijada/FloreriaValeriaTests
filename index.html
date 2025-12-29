@@ -21,6 +21,10 @@
     <!-- Preload hero image original for instant loading -->
     <link rel="preload" href="./assets/landingPage/Flores-Hero.png" as="image">
     
+    <!-- Core refactored architecture -->
+    <link rel="stylesheet" href="./styles/design-system.css">
+    <link rel="stylesheet" href="./styles/integration.css">
+    
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./components/ProductCard/ProductCard.css">
     <link rel="stylesheet" href="./components/ResponsiveImageLoader.css">
@@ -373,6 +377,18 @@
     
     <!-- Monitor de performance de imágenes -->
     <script src="./utils/performance-monitor.js"></script>
+    
+    <!-- Refactored Architecture JavaScript -->
+    <script src="./utils/logger.js"></script>
+    <script src="./utils/EventManager.js"></script>
+    <script src="./utils/BaseUtils.js"></script>
+    <script src="./components/BaseImageManager.js"></script>
+    <script src="./components/BaseGallery.js"></script>
+    
+    <!-- Progressive Migration Control -->
+    <script>
+        window.ENABLE_V2_MANAGERS = true; // Enable new architecture progressively
+    </script>
     
     <!-- Sistema de analytics -->
     <script src="./utils/analytics.js"></script>

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mapIframes = document.querySelectorAll('.branch-map iframe');
     mapIframes.forEach(iframe => {
         iframe.addEventListener('load', function() {
-            console.log('Mapa cargado correctamente');
+            // Mapa cargado correctamente
         });
     });
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     contactButtons.forEach(button => {
         button.addEventListener('click', function() {
             const buttonText = this.textContent.trim();
-            console.log(`Clic en botón: ${buttonText}`);
+            // Clic en botón registrado
             
             // Efecto visual al hacer clic
             this.style.transform = 'scale(0.95)';
@@ -84,5 +84,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    console.log('Página de contacto cargada correctamente');
+    // Página de contacto cargada correctamente
 });
