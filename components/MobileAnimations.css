@@ -1,0 +1,444 @@
+/**
+ * Mobile Animations & Micro-interactions
+ * Animaciones fluidas y micro-interacciones optimizadas para mobile
+ */
+
+/* =========================== */
+/* Variables de Animación */
+/* =========================== */
+
+:root {
+    --animation-fast: 0.15s;
+    --animation-medium: 0.3s;
+    --animation-slow: 0.6s;
+    --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --easing-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* =========================== */
+/* Animaciones de Entrada */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Fade in staggered para las cards */
+    .product-card {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: mobile-fade-in-up 0.6s var(--easing-smooth) forwards;
+    }
+
+    .product-card:nth-child(1) { animation-delay: 0.1s; }
+    .product-card:nth-child(2) { animation-delay: 0.2s; }
+    .product-card:nth-child(3) { animation-delay: 0.3s; }
+    .product-card:nth-child(4) { animation-delay: 0.4s; }
+    .product-card:nth-child(5) { animation-delay: 0.5s; }
+    .product-card:nth-child(6) { animation-delay: 0.6s; }
+    .product-card:nth-child(n+7) { animation-delay: 0.7s; }
+
+    @keyframes mobile-fade-in-up {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animación de filtros */
+    .filter-btn {
+        opacity: 0;
+        transform: scale(0.8);
+        animation: mobile-filter-appear 0.4s var(--easing-bounce) forwards;
+    }
+
+    .filter-btn:nth-child(1) { animation-delay: 0.1s; }
+    .filter-btn:nth-child(2) { animation-delay: 0.15s; }
+    .filter-btn:nth-child(3) { animation-delay: 0.2s; }
+    .filter-btn:nth-child(4) { animation-delay: 0.25s; }
+    .filter-btn:nth-child(5) { animation-delay: 0.3s; }
+    .filter-btn:nth-child(6) { animation-delay: 0.35s; }
+
+    @keyframes mobile-filter-appear {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+/* =========================== */
+/* Micro-interacciones de Tap */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Ripple effect mejorado */
+    .mobile-ripple {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-ripple::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+        pointer-events: none;
+    }
+
+    .mobile-ripple:active::after {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Feedback de presión para botones */
+    .mobile-press-feedback:active {
+        transform: scale(0.95);
+        filter: brightness(0.9);
+        transition: all var(--animation-fast) var(--easing-smooth);
+    }
+
+    /* Animación de éxito para acciones */
+    .mobile-success-pulse {
+        animation: mobile-success-pulse 0.8s var(--easing-smooth);
+    }
+
+    @keyframes mobile-success-pulse {
+        0% { 
+            box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); 
+            transform: scale(1);
+        }
+        50% { 
+            transform: scale(1.05); 
+        }
+        70% { 
+            box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); 
+        }
+        100% { 
+            box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+            transform: scale(1);
+        }
+    }
+}
+
+/* =========================== */
+/* Animaciones de Loading */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Skeleton loading mejorado */
+    .mobile-skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: mobile-skeleton-loading 1.5s infinite;
+        border-radius: 8px;
+    }
+
+    @keyframes mobile-skeleton-loading {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    /* Loading spinner móvil */
+    .mobile-spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid var(--ramos-primary);
+        border-radius: 50%;
+        animation: mobile-spin 0.8s linear infinite;
+        margin: 0 auto;
+    }
+
+    @keyframes mobile-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Pulse loading para botones */
+    .mobile-loading-pulse {
+        animation: mobile-loading-pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes mobile-loading-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+}
+
+/* =========================== */
+/* Animaciones de Estado */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Slide down para modales */
+    .mobile-modal-enter {
+        animation: mobile-modal-slide-up 0.4s var(--easing-smooth);
+    }
+
+    .mobile-modal-exit {
+        animation: mobile-modal-slide-down 0.3s var(--easing-smooth);
+    }
+
+    @keyframes mobile-modal-slide-up {
+        from {
+            opacity: 0;
+            transform: translateY(100vh);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes mobile-modal-slide-down {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(100vh);
+        }
+    }
+
+    /* Bounce para elementos importantes */
+    .mobile-bounce-attention {
+        animation: mobile-bounce-attention 0.8s var(--easing-bounce);
+    }
+
+    @keyframes mobile-bounce-attention {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    /* Shake para errores */
+    .mobile-shake-error {
+        animation: mobile-shake 0.5s var(--easing-smooth);
+    }
+
+    @keyframes mobile-shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+    }
+}
+
+/* =========================== */
+/* Animaciones de Transición */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Fade para cambios de contenido */
+    .mobile-fade-transition {
+        transition: opacity var(--animation-medium) var(--easing-smooth);
+    }
+
+    .mobile-fade-out {
+        opacity: 0;
+    }
+
+    .mobile-fade-in {
+        opacity: 1;
+    }
+
+    /* Slide para navegación */
+    .mobile-slide-left {
+        animation: mobile-slide-left 0.3s var(--easing-smooth);
+    }
+
+    .mobile-slide-right {
+        animation: mobile-slide-right 0.3s var(--easing-smooth);
+    }
+
+    @keyframes mobile-slide-left {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+
+    @keyframes mobile-slide-right {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+
+    /* Scale para zoom */
+    .mobile-scale-in {
+        animation: mobile-scale-in 0.3s var(--easing-smooth);
+    }
+
+    .mobile-scale-out {
+        animation: mobile-scale-out 0.2s var(--easing-smooth);
+    }
+
+    @keyframes mobile-scale-in {
+        from { 
+            opacity: 0;
+            transform: scale(0.8); 
+        }
+        to { 
+            opacity: 1;
+            transform: scale(1); 
+        }
+    }
+
+    @keyframes mobile-scale-out {
+        from { 
+            opacity: 1;
+            transform: scale(1); 
+        }
+        to { 
+            opacity: 0;
+            transform: scale(0.8); 
+        }
+    }
+}
+
+/* =========================== */
+/* Animaciones de Filtros */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Transición suave para filtros */
+    .filter-btn.active {
+        animation: mobile-filter-activate 0.3s var(--easing-bounce);
+    }
+
+    @keyframes mobile-filter-activate {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1.02); }
+    }
+
+    /* Grid reorganization */
+    .gallery-grid {
+        animation: mobile-grid-update 0.4s var(--easing-smooth);
+    }
+
+    @keyframes mobile-grid-update {
+        0% { opacity: 0.7; }
+        100% { opacity: 1; }
+    }
+
+    /* Stagger animation para productos filtrados */
+    .product-card.mobile-filter-show {
+        animation: mobile-fade-in-scale 0.4s var(--easing-smooth) forwards;
+    }
+
+    .product-card.mobile-filter-hide {
+        animation: mobile-fade-out-scale 0.2s var(--easing-smooth) forwards;
+    }
+
+    @keyframes mobile-fade-in-scale {
+        from {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    @keyframes mobile-fade-out-scale {
+        from {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: scale(0.8) translateY(-20px);
+        }
+    }
+}
+
+/* =========================== */
+/* Optimización de Rendimiento */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Usar GPU para animaciones críticas */
+    .product-card,
+    .filter-btn,
+    .modal-content,
+    .mobile-ripple {
+        will-change: transform, opacity;
+        transform: translateZ(0); /* Force hardware acceleration */
+    }
+
+    /* Reducir animaciones para dispositivos de bajo rendimiento */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+
+    /* Optimizar para pantallas de baja densidad */
+    @media (-webkit-max-device-pixel-ratio: 1) {
+        .mobile-skeleton,
+        .mobile-ripple::after {
+            animation-duration: 0.8s; /* Reducir duración en pantallas menos potentes */
+        }
+    }
+}
+
+/* =========================== */
+/* Utilidades de Animación */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Clases helper para JavaScript */
+    .mobile-animate-fast {
+        transition: all var(--animation-fast) var(--easing-smooth) !important;
+    }
+
+    .mobile-animate-medium {
+        transition: all var(--animation-medium) var(--easing-smooth) !important;
+    }
+
+    .mobile-animate-slow {
+        transition: all var(--animation-slow) var(--easing-smooth) !important;
+    }
+
+    .mobile-bounce {
+        animation: mobile-bounce-once 0.6s var(--easing-bounce);
+    }
+
+    @keyframes mobile-bounce-once {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    .mobile-wiggle {
+        animation: mobile-wiggle 0.5s ease-in-out;
+    }
+
+    @keyframes mobile-wiggle {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-3deg); }
+        75% { transform: rotate(3deg); }
+    }
+
+    /* Hover effects simulados para mobile */
+    .mobile-hover-lift:active {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all var(--animation-fast) var(--easing-smooth);
+    }
+
+    .mobile-hover-glow:active {
+        box-shadow: 0 0 20px rgba(213, 166, 189, 0.4);
+        transition: all var(--animation-medium) var(--easing-smooth);
+    }
+}

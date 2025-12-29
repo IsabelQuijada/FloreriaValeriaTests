@@ -1,0 +1,277 @@
+/**
+ * Optimizaciones de Interacción Táctil para Mobile
+ * Mejoras en UI/UX específicas para dispositivos móviles
+ */
+
+/* =========================== */
+/* Variables para Mobile Touch */
+/* =========================== */
+
+:root {
+    --touch-target-min: 44px; /* Mínimo recomendado por Apple/Google */
+    --ripple-duration: 0.6s;
+    --feedback-duration: 0.2s;
+    --mobile-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --mobile-shadow-active: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================== */
+/* Touch-Friendly Button Sizes */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Asegurar targets táctiles mínimos */
+    .filter-btn,
+    .contact-btn,
+    .add-to-cart-btn,
+    .modal-close,
+    .quick-view-btn {
+        min-height: var(--touch-target-min);
+        min-width: var(--touch-target-min);
+    }
+
+    /* Eliminar highlight de selección en elementos clickeables */
+    .product-card,
+    .filter-btn,
+    .contact-btn,
+    .add-to-cart-btn,
+    .modal-close {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* =========================== */
+/* Feedback Visual Mejorado */
+/* =========================== */
+
+/* Ripple effect para botones */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width var(--ripple-duration) ease, height var(--ripple-duration) ease;
+}
+
+.btn-ripple:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Feedback táctil para cards */
+@media (max-width: 768px) {
+    .product-card {
+        transition: transform var(--feedback-duration) cubic-bezier(0.4, 0, 0.2, 1),
+                   box-shadow var(--feedback-duration) cubic-bezier(0.4, 0, 0.2, 1),
+                   background-color var(--feedback-duration) ease;
+    }
+
+    .product-card:active {
+        transform: scale(0.98);
+        box-shadow: var(--mobile-shadow-active);
+        background-color: #fafafa;
+    }
+
+    /* Feedback para filtros */
+    .filter-btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    /* Feedback para botones de contacto */
+    .contact-btn:active,
+    .modal-whatsapp-btn:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+        box-shadow: var(--mobile-shadow-active);
+    }
+}
+
+/* =========================== */
+/* Mejoras de Accesibilidad */
+/* =========================== */
+
+/* Focus states visibles para navegación con teclado */
+@media (max-width: 768px) {
+    .product-card:focus-within,
+    .filter-btn:focus,
+    .contact-btn:focus {
+        outline: 3px solid var(--ramos-primary);
+        outline-offset: 2px;
+    }
+
+    /* Mejor contraste para textos pequeños */
+    .product-description {
+        color: #4a5568;
+        font-weight: 400;
+    }
+
+    .product-title,
+    .product-name {
+        color: #6d1e61;
+        font-weight: 600;
+    }
+}
+
+/* =========================== */
+/* Optimización de Rendimiento */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Usar will-change para elementos que se animan */
+    .product-card,
+    .filter-btn,
+    .contact-btn {
+        will-change: transform, box-shadow;
+    }
+
+    /* Optimizar transiciones para 60fps */
+    .product-card:active,
+    .filter-btn:active,
+    .contact-btn:active {
+        will-change: transform;
+    }
+
+    /* Limpiar will-change después de transiciones */
+    .product-card:not(:active),
+    .filter-btn:not(:active),
+    .contact-btn:not(:active) {
+        will-change: auto;
+    }
+}
+
+/* =========================== */
+/* Swipe Indicators & Gestures */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Indicador de swipe para modales */
+    .modal-swipe-indicator {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        background: #ccc;
+        border-radius: 2px;
+        z-index: 1000;
+    }
+
+    /* Área de pull-to-refresh */
+    .gallery-section {
+        touch-action: pan-y;
+        overscroll-behavior-y: contain;
+    }
+
+    /* Scroll suave para filtros horizontales */
+    .filter-buttons {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* =========================== */
+/* Estados de Loading Táctiles */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Loading state con skeleton más natural */
+    .skeleton-loading {
+        pointer-events: none;
+        user-select: none;
+    }
+
+    /* Pulse effect para skeleton */
+    .skeleton-pulse {
+        animation: skeleton-pulse 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes skeleton-pulse {
+        0% { opacity: 0.6; }
+        100% { opacity: 1; }
+    }
+
+    /* Feedback de tap mientras carga */
+    .loading-tap-feedback:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* =========================== */
+/* Mejoras de Navegación Mobile */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Scroll snap para mejor navegación */
+    .gallery-grid {
+        scroll-snap-type: y mandatory;
+    }
+
+    .product-card {
+        scroll-snap-align: start;
+    }
+
+    /* Área expandida para cerrar modal */
+    .modal-overlay {
+        cursor: pointer;
+    }
+
+    .modal-content {
+        cursor: default;
+    }
+
+    /* Prevenir zoom en inputs (si los hay) */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px; /* Previene zoom en iOS */
+    }
+}
+
+/* =========================== */
+/* Feedback Haptic Visual */
+/* =========================== */
+
+@media (max-width: 768px) {
+    /* Animación de "bounce" para confirmaciones */
+    .bounce-feedback {
+        animation: bounce-feedback 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes bounce-feedback {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    /* Success state visual */
+    .success-feedback {
+        background: linear-gradient(45deg, #48bb78, #38a169);
+        color: white;
+        animation: success-pulse 0.6s ease-out;
+    }
+
+    @keyframes success-pulse {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7); }
+        50% { transform: scale(1.02); }
+        70% { box-shadow: 0 0 0 10px rgba(72, 187, 120, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(72, 187, 120, 0); }
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "floreria-valeria-website",
+  "version": "1.0.0",
+  "description": "Sitio web de Florería Valeria - Flores frescas para cada ocasión",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "build": "npm run optimize-images && npm run minify-css && npm run minify-js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "optimize-images-advanced": "node scripts/optimize-images.mjs",
+    "minify-css": "cleancss -o dist/styles.min.css styles.css components/**/*.css",
+    "minify-js": "terser script.js components/**/*.js utils/**/*.js -o dist/app.min.js",
+    "lint": "eslint *.js components/**/*.js categorias/**/*.js utils/**/*.js",
+    "format": "prettier --write *.js *.css components/ categorias/ utils/",
+    "test-images": "node -e \"console.log('Testing image optimization...'); require('./scripts/optimize-images.js')\"",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "intersection-observer": "^0.12.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sharp": "^0.32.6",
+    "glob": "^10.3.10",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "imagemin-avif": "^0.1.5",
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.19.4",
+    "eslint": "^8.53.0",
+    "prettier": "^3.0.3"
+  },
+  "keywords": ["floreria", "flores", "website", "e-commerce"],
+  "author": "Florería Valeria",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
