@@ -65,23 +65,17 @@ class QuinceaneraUtils {
     static generateWhatsAppMessage(productName, category) {
         let categoryText;
         switch (category) {
-            case 'ramo-estilizado':
-                categoryText = 'un ramo estilizado';
+            case 'centroDeMesa':
+                categoryText = 'un centro de mesa para quinceañera';
                 break;
-            case 'ramo-girasoles':
-                categoryText = 'un ramo de girasoles';
+            case 'templo':
+                categoryText = 'un arreglo de templo para quinceañera';
                 break;
-            case 'ramo-mix':
-                categoryText = 'un ramo mixto';
-                break;
-            case 'ramo-rosas':
-                categoryText = 'un ramo de rosas';
-                break;
-            case 'ramo-tulipanes':
-                categoryText = 'un ramo de tulipanes';
+            case 'ramos':
+                categoryText = 'un ramo para quinceañera';
                 break;
             default:
-                categoryText = 'un ramo para quinceañera';
+                categoryText = 'un producto para quinceañera';
         }
         return `Hola, me interesa ${categoryText}: "${productName}" para una celebración de quinceañera. ¿Podrían darme más información sobre disponibilidad y precio?`;
     }
@@ -94,18 +88,14 @@ class QuinceaneraUtils {
         const match = filename.match(/(\d+)/);
         const number = match ? match[1] : '1';
         switch (category) {
-            case 'ramo-estilizado':
-                return `Ramo Estilizado ${number}`;
-            case 'ramo-girasoles':
-                return `Ramo de Girasoles ${number}`;
-            case 'ramo-mix':
-                return `Ramo Mixto ${number}`;
-            case 'ramo-rosas':
-                return `Ramo de Rosas ${number}`;
-            case 'ramo-tulipanes':
-                return `Ramo de Tulipanes ${number}`;
-            default:
+            case 'centroDeMesa':
+                return `Centro de Mesa ${number}`;
+            case 'templo':
+                return `Arreglo de Templo ${number}`;
+            case 'ramos':
                 return `Ramo para Quinceañera ${number}`;
+            default:
+                return `Producto Quinceañera ${number}`;
         }
     }
 }

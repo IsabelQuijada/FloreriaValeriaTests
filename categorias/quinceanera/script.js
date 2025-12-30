@@ -8,9 +8,9 @@ const quinceaneraProducts = quinceaneraImageManager.getAllProducts();
 
 // Mapeo de categorías para mostrar nombres amigables
 const categoryNames = {
-    'ramos-quinceañera': 'Ramos de Quinceañera',
-    'centros-de-mesa': 'Centros de Mesa',
-    'templo-quinceañera': 'Arreglos de Templo'
+    'ramos': 'Ramos de Quinceañera',
+    'centroDeMesa': 'Centros de Mesa',
+    'templo': 'Arreglos de Templo'
 };
 
 class QuinceaneraGallery {
@@ -60,9 +60,9 @@ class QuinceaneraGallery {
         if (filterContainer) {
             const filters = [
                 { category: 'all', label: 'Toda la Colección' },
-                { category: 'ramos-quinceañera', label: 'Ramos de Quinceañera' },
-                { category: 'centros-de-mesa', label: 'Centros de Mesa' },
-                { category: 'templo-quinceañera', label: 'Arreglos de Templo' }
+                { category: 'ramos', label: 'Ramos de Quinceañera' },
+                { category: 'centroDeMesa', label: 'Centros de Mesa' },
+                { category: 'templo', label: 'Arreglos de Templo' }
             ];
 
             filters.forEach(filter => {
