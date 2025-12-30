@@ -31,22 +31,22 @@ class RamosElegantesImageManager {
 
         // Descripciones específicas por imagen
         this.imageDescriptions = {
-            'Ramo1.png': 'Ramo elegante con flores premium y diseño sofisticado que destaca por su elegancia natural y composición armoniosa.',
-            'Ramo2.png': 'Arreglo elegante con selección cuidadosa de flores que combina texturas y colores para crear una experiencia visual única.',
-            'Ramo3.png': 'Ramo refinado con técnicas artesanales avanzadas que resalta la belleza individual de cada flor seleccionada.',
-            'Ramo4.png': 'Diseño elegante que incorpora elementos naturales exclusivos para una presentación sofisticada y distinguida.',
-            'Ramo5.png': 'Ramo exclusivo con flores de temporada selectas y arreglo profesional que transmite lujo y elegancia.',
-            'Ramo6.png': 'Creación elegante que combina tradición y modernidad en una expresión perfecta del arte floral contemporáneo.',
-            'Ramo7.png': 'Arreglo sofisticado con atención meticulosa al detalle y composición que supera las expectativas más exigentes.',
-            'Ramo8.png': 'Ramo elegante con diseño asimétrico contemporáneo que crea movimiento y dinamismo visual sofisticado.',
-            'Ramo9.png': 'Diseño refinado que utiliza la armonía cromática para crear una experiencia sensorial completa y memorable.',
-            'Ramo10.png': 'Ramo elegante con flores importadas y presentación impecable que refleja calidad superior en cada detalle.',
-            'Ramo11.png': 'Arreglo exclusivo con técnicas de conservación avanzadas para máxima durabilidad y frescura prolongada.',
-            'Ramo12.png': 'Ramo sofisticado que combina diferentes especies florales en una sinfonía de elegancia y distinción natural.',
-            'Ramo13.png': 'Diseño elegante con enfoque minimalista que destaca la pureza y perfección de cada elemento floral.',
-            'Ramo14.png': 'Arreglo refinado con packaging premium y presentación ceremonial para experiencias inolvidables únicas.',
-            'Ramo15.png': 'Ramo elegante que representa la culminación del arte floral sofisticado con flores excepcionales selectas.',
-            'ramo16.png': 'Creación elegante final con diseño exclusivo que combina tradición artesanal con innovación contemporánea.'
+            'Ramo1.png': 'Tulipanes rosas y lisianthus lila con delicado follaje, un ramo fresco, elegante y lleno de vida.',
+            'Ramo2.png': 'Rosas blancas y rosas con margaritas, frescura y elegancia en cada detalle.',
+            'Ramo3.png': 'Rosas en tonos rosa y crema, elegancia natural y armonía en cada flor.',
+            'Ramo4.png': 'Gerberas y margaritas rosas con verdes, alegre y elegante para cualquier ocasión.',
+            'Ramo5.png': 'Tulipanes y rosas en tonos suaves, frescura y delicadeza en un solo ramo.',
+            'Ramo6.png': 'Lirios y rosas blancas con lisianthus, elegancia clásica en tonos suaves.',
+            'Ramo7.png': 'Gerberas en tonos rosa y blanco, alegre, elegante y lleno de vida.',
+            'Ramo8.png': 'Gerberas rosas y rosas claras con toques de verde, un ramo alegre y elegante para cualquier ocasión.',
+            'Ramo9.png': 'Peonías blancas y follaje gris, un ramo elegante y sereno que inspira pureza y calma.',
+            'Ramo10.png': 'Rosas durazno, margaritas y flores pastel, un ramo alegre y elegante para celebrar momentos especiales.',
+            'Ramo11.png': 'Gerberas blancas, rosas rosas y eucalipto, un ramo fresco y elegante para alegrar cualquier espacio.',
+            'Ramo12.png': 'Rosas blancas y flores durazno con follaje verde, un ramo elegante y natural para cualquier ocasión.',
+            'Ramo13.png': 'Rosas blancas y follaje verde, un ramo sencillo y elegante que transmite paz y belleza natural.',
+            'Ramo14.png': 'Rosas, lisianthus y asters en tonos pastel, un ramo alegre y elegante para felicitar con estilo.',
+            'Ramo15.png': 'Rosas rojas y alstroemerias blancas, un ramo clásico y elegante para expresar amor sincero.',
+            'ramo16.png': 'Rosas blancas y lilas con follaje fresco, un ramo elegante y sereno para ocasiones especiales.'
         };
 
         this.config = window.RAMOS_ELEGANTES_CONFIG || {
